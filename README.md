@@ -2,8 +2,6 @@
 
 ### I code (mostly) for fun
 ![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=tonax70&theme=nord_dark)
-![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=tonax70&theme=nord_dark)
-
 <!--
 **tonax70/tonax70** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
