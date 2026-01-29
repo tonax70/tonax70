@@ -1,5 +1,9 @@
 ## Hi there 👋
 
+### I code (mostly) for fun
+- here is what I cook
+![recipes](https://github-readme-stats.vercel.app/api/top-langs/?username=tonax70&layout=compact)
+
 <!--
 **tonax70/tonax70** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
