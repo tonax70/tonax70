@@ -4,7 +4,7 @@ on:
   schedule:
     # Runs at midnight every day
     - cron: '0 0 * * *'
-  # Allows you to run it manually from the Actions tab for testing
+  # Allows you to manually trigger it for testing
   workflow_dispatch:
 
 jobs:
@@ -15,19 +15,23 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Generate Top Langs (Donut + Dark Theme)
+      # Generate the "Top Langs" Card
+      - name: Generate Top Langs
         uses: soulteary/github-readme-stats-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           card: top-langs
-          # "layout=donut" and "theme=dark"
-          options: 'username=${{ github.repository_owner }}&layout=pie&theme=dark&hide=html,css'
+          # ⬇️ Customize your options here! 
+          # Example: Compact layout, Dracula theme, Hide HTML/CSS
+          options: 'username=${{ github.repository_owner }}&layout=compact&theme=dark&hide=html,css'
           path: 'generated/top-langs.svg'
 
+      # Push the generated file back to your repo
       - name: Commit and Push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Force add in case the file is new
           git add generated/top-langs.svg
           git commit -m "Update Top Langs" || exit 0
           git push
