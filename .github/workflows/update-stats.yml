@@ -21,7 +21,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           card: top-langs
           # "layout=donut" and "theme=dark"
-          options: 'username=${{ github.repository_owner }}&layout=donut&theme=dark&hide=html,css'
+          options: 'username=${{ github.repository_owner }}&layout=pie&theme=dark&hide=html,css'
           path: 'generated/top-langs.svg'
 
       - name: Commit and Push
