@@ -1,0 +1,37 @@
+name: Update Readme Stats
+
+on:
+  schedule:
+    # Runs at midnight every day
+    - cron: '0 0 * * *'
+  # Allows you to manually trigger it for testing
+  workflow_dispatch:
+
+jobs:
+  generate-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+
+      # Generate the "Top Langs" Card
+      - name: Generate Top Langs
+        uses: soulteary/github-readme-stats-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          card: top-langs
+          # ⬇️ Customize your options here! 
+          # Example: Compact layout, Dracula theme, Hide HTML/CSS
+          options: 'username=${{ github.repository_owner }}&layout=compact&theme=dracula&hide=html,css'
+          path: 'generated/top-langs.svg'
+
+      # Push the generated file back to your repo
+      - name: Commit and Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Force add in case the file is new
+          git add generated/top-langs.svg
+          git commit -m "Update Top Langs" || exit 0
+          git push
