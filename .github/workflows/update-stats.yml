@@ -23,7 +23,7 @@ jobs:
           card: top-langs
           # ⬇️ Customize your options here! 
           # Example: Compact layout, Dracula theme, Hide HTML/CSS
-          options: 'username=${{ github.repository_owner }}&layout=donut&theme=transparent&hide=html,css'
+          options: 'username=${{ github.repository_owner }}&layout=donut-vertical&theme=radical&hide=html,css'
           path: 'generated/top-langs.svg'
 
       # Push the generated file back to your repo
