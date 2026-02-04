@@ -2,6 +2,7 @@
 
 ### I code (mostly) for fun
 ![Top Langs](./generated/top-langs.svg)
+![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=tonax70&theme=nord_dark)
 <!--
 **tonax70/tonax70** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
